@@ -9,28 +9,26 @@
 ### Függvények:
 `function` visszatérési értékkel és `procedure` nincs visszatérési érték
 `begin` és `end` közé kerül a kód
-változó létrehozása:
-
+> változó létrehozása:
 `valtozonev típus:= 'érték';`
 
-kiíratás:
+> kiíratás:
 ````PLSQL
 
 BEGIN
    --PROGRAMBLOKK
    dbms_output.put_line(); -- KIIRATÁS
 END;
-
 ````
 
-függvény létrehozás:
+> függvény létrehozás:
 ````PLSQL
 
 CREATE OR REPLACE FUNCTION függvény_neve(n integer) RETURN number IS
 
 ````
 
-Hello world:
+> Hello world:
 ````PLSQL
 
 create or replace procedure hello is
@@ -42,7 +40,7 @@ set serveroutput on;
 call hello();
 ````
 
-Értékátadással:
+> Értékátadással:
 ````PLSQL
 create or replace procedure hello(nev VARCHAR2) is
 begin
@@ -54,7 +52,7 @@ call hello('Béla');
 ````
 
 
-váltózó vagy érték:
+> váltózó vagy érték:
 ````PLSQL
 create or replace procedure hello(nev VARCHAR2) is
     szoveg VARCHAR2(10) := 'Hello'; /*ha parméterként veszem át akkor nem adom meg milyen hosszú ha változóként veszem át akkor meg kell monsni a változó méretét*/
@@ -66,7 +64,7 @@ set serveroutput on;
 call hello('Béla');
 ````
 
-for ciklus:
+> `for` ciklus:
 ````PLSQL
 create or replace procedure hello(nev VARCHAR2, n int) is
     szoveg VARCHAR2(10) := 'Hello'; /*ha parméterként veszem át akkor nem adom meg milyen hosszú ha változóként veszem át akkor meg kell monsni a változó méretét*/
@@ -79,7 +77,7 @@ end hello;
 set serveroutput on;
 call hello('Béla', 10);
 ````
-vissszafele iterálás:
+> vissszafele iterálás:
 ````PLSQL
 create or replace procedure hello(nev VARCHAR2, n int) is
     szoveg VARCHAR2(10) := 'Hello'; /*ha parméterként veszem át akkor nem adom meg milyen hosszú ha változóként veszem át akkor meg kell monsni a változó méretét*/
@@ -93,7 +91,7 @@ set serveroutput on;
 call hello('Béla', 10);
 ````
 
-if:
+> `if`:
 ````PLSQL
 create or replace procedure hello(nev VARCHAR2, n int) is
     szoveg VARCHAR2(10) := 'Hello'; /*ha parméterként veszem át akkor nem adom meg milyen hosszú ha változóként veszem át akkor meg kell monsni a változó méretét*/
@@ -113,7 +111,7 @@ set serveroutput on;
 call hello('Béla', 10);
 ````
 
-function:
+> `function`:
 ````PLSQL
 create or replace function  hello2(nev VARCHAR2) return VARCHAR2 is
 begin
@@ -124,7 +122,7 @@ set serveroutput on;
 select hello2('Béla') from dual;
 ````
 
-declare és `in out` paraméterezése és meghívása:
+> declare és `in out` paraméterezése és meghívása:
 ````PLSQL
 create or replace function  hello2(nev in out VARCHAR2) return VARCHAR2 is
 begin
@@ -140,7 +138,7 @@ END;
 ````
 
 
-`in out kijátszása beslő változóval:
+> `in out` kijátszása beslő változóval:
 ````PLSQL
 create or replace function  hello2(nev VARCHAR2) return VARCHAR2 is
     nev2 VARCHAR2(10) := nev;
@@ -152,7 +150,7 @@ end hello2;
 select hello2('Béla') from dual;
 ````
 
-string alstringje:
+> `string` alstringje:
 ````PLSQL
 
 select SUBSTR('alma', 1, 1) from dual;
