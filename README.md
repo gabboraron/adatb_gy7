@@ -1,4 +1,4 @@
-# GY9
+# GY7 | 8. óra
 > http://vopraai.web.elte.hu/tananyag/adatb1819/8.ora/feladat.txt
 ## PLSQL
 > oracle specifikus nyelv
@@ -10,7 +10,9 @@
 `function` visszatérési értékkel és `procedure` nincs visszatérési érték
 `begin` és `end` közé kerül a kód
 > változó létrehozása:
-`valtozonev típus:= 'érték';`
+````PLSQL
+valtozonev típus:= 'érték';
+````
 
 > kiíratás:
 ````PLSQL
@@ -163,8 +165,8 @@ BEGIN
     end LOOP;
 END;
 ````
-
-> 2, Prím-e Függvény 
+## Feladatok
+>  Prím-e Függvény 
 ````PLSQL
 create or replace function  prim(szam int) return int is
     
@@ -194,7 +196,7 @@ SELECT prim(263062) from dual;
 Select prim(dkod), dolgozo.* from dolgozo where prim(dkod) = 1;
 ````
 
-> 3, N. fibonacci függvény
+> N. fibonacci függvény
 ````PLSQL
 create or replace function  fib(szam int) return int is   
   begin
@@ -210,7 +212,7 @@ end fib;
 select fib(10) from dual;
 ````
 
-> 4, LNKO függvény
+> LNKO függvény
 ````PLSQL
 create or replace function  lnko(a int, b int) return int is   
 begin
@@ -224,7 +226,7 @@ end;
 select lnko(80,100) from dual;
 ````
 
-> 5, Faktoriális függvény
+> Faktoriális függvény
 
 ````PLSQL
 create or replace function  faktor(n int) return int is   
